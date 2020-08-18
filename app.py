@@ -14,9 +14,9 @@ def download():
     try:
         url = request.form["videolink"]
         type = request.form["downloadtype"]
-        filename = pafy.new(url).getbest(preftype='mp4').download(quiet=False)
+        # filename = pafy.new(url).getbest(preftype='mp4').download(quiet=False)
         # print(type(filename) + "ARPIT")
-        return send_file(r"C:\Users\Arpit\Desktop\Flask\Youtube Downloader\static\profilePic.jpg" , as_attachment=True)
+        return send_file('profilePic.jpg' , as_attachment=True)
 
     except Exception as e:
         print(e)

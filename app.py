@@ -1,5 +1,5 @@
 from flask import Flask, render_template , request
-import pafy
+# import pafy
 app = Flask(__name__)
 
 
@@ -14,9 +14,9 @@ def download():
     try:
         url = request.form["videolink"]
         type = request.form["downloadtype"]
-        filename = pafy.new(url).getbest(preftype='mp4').download(quiet=False)
-        return render_template('index.html', url=url, type=type)
-
+        # filename = pafy.new(url).getbest(preftype='mp4').download(quiet=False)
+        # return render_template('index.html', url=url, type=type)
+        return url + "WORKING"
     except Exception as e:
         print(e)
         return "Please try again"
